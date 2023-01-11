@@ -1,25 +1,17 @@
 package main
 
 import (
-	"encoding/xml"
-	"github.com/graincomg/graincom_logistik/models"
-	"github.com/graincomg/graincom_logistik/prettifier"
-	"github.com/graincomg/graincom_logistik/visualiser"
-	"io/ioutil"
+	"fmt"
+	"github.com/graincomg/graincom_logistik/db"
 	"log"
 )
 
 func main() {
-	body, err := ioutil.ReadFile("../../Downloads/map (7)")
+	conn, err := db.GetConnection()
 	if err != nil {
 		log.Fatal(err)
 	}
-	var mp models.Oms
-	err = xml.Unmarshal(body, &mp)
-	if err != nil {
-		log.Fatal(err)
-	}
-	prettifier.Сonvenience(mp)
+	defer conn.Close()
 
-	visualiser.Visualiser(mp.Node, mp.Way, nil)
+	fmt.Println(conn)
 }

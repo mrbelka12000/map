@@ -23,27 +23,27 @@ type Bounds struct {
 	Maxlon string `xml:"maxlon,attr"`
 }
 type Node struct {
-	ID        string `xml:"id,attr"`
-	Visible   string `xml:"visible,attr"`
-	Version   string `xml:"version,attr"`
-	Changeset string `xml:"changeset,attr"`
-	Timestamp string `xml:"timestamp,attr"`
-	User      string `xml:"user,attr"`
-	Uid       string `xml:"uid,attr"`
-	Lat       string `xml:"lat,attr"`
-	Lon       string `xml:"lon,attr"`
-	Tag       []Tag  `xml:"tag"`
+	ID        string  `xml:"id,attr"`
+	Visible   string  `xml:"visible,attr"`
+	Version   *string `xml:"-"`
+	Changeset *string `xml:"-"`
+	Timestamp *string `xml:"-"`
+	User      *string `xml:"-"`
+	Uid       *string `xml:"-"`
+	Lat       string  `xml:"lat,attr"`
+	Lon       string  `xml:"lon,attr"`
+	Tag       []Tag   `xml:"tag"`
 	MapTag    map[string]string
 }
 
 type Way struct {
-	ID        string `xml:"id,attr"`
-	Visible   string `xml:"visible,attr"`
-	Version   string `xml:"version,attr"`
-	Changeset string `xml:"changeset,attr"`
-	Timestamp string `xml:"timestamp,attr"`
-	User      string `xml:"user,attr"`
-	Uid       string `xml:"uid,attr"`
+	ID        string  `xml:"id,attr"`
+	Visible   string  `xml:"visible,attr"`
+	Version   *string `xml:"-"`
+	Changeset *string `xml:"-"`
+	Timestamp *string `xml:"-"`
+	User      *string `xml:"-"`
+	Uid       *string `xml:"-"`
 	Nd        []struct {
 		Ref string `xml:"ref,attr"`
 	} `xml:"nd"`
@@ -51,13 +51,13 @@ type Way struct {
 }
 
 type Relation struct {
-	ID        string `xml:"id,attr"`
-	Visible   string `xml:"visible,attr"`
-	Version   string `xml:"version,attr"`
-	Changeset string `xml:"changeset,attr"`
-	Timestamp string `xml:"timestamp,attr"`
-	User      string `xml:"user,attr"`
-	Uid       string `xml:"uid,attr"`
+	ID        string  `xml:"id,attr"`
+	Visible   string  `xml:"visible,attr"`
+	Version   string  `xml:"version,attr"`
+	Changeset *string `xml:"-"`
+	Timestamp *string `xml:"-"`
+	User      *string `xml:"-"`
+	Uid       *string `xml:"-"`
 	Member    []struct {
 		Text string `xml:",chardata"`
 		Type string `xml:"type,attr"`
