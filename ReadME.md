@@ -1,5 +1,7 @@
 ## Map
 
+### IN Progress
+
 
 ### Download map osm.pbf
 https://download.geofabrik.de/asia/kazakhstan.html
